@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE05158916C822E700746453 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAB238216C7594700CB9830 /* libpd-ios.a */; };
+		BE05158B16C8236000746453 /* tuner.pd in Resources */ = {isa = PBXBuildFile; fileRef = BE05158A16C8236000746453 /* tuner.pd */; };
+		BE05158D16C8285A00746453 /* fender_strat.png in Resources */ = {isa = PBXBuildFile; fileRef = BE05158C16C8285A00746453 /* fender_strat.png */; };
 		BEAB233C16C758E600CB9830 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAB233B16C758E600CB9830 /* UIKit.framework */; };
 		BEAB233E16C758E600CB9830 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAB233D16C758E600CB9830 /* Foundation.framework */; };
 		BEAB234016C758E600CB9830 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAB233F16C758E600CB9830 /* CoreGraphics.framework */; };
@@ -24,6 +27,8 @@
 		BEAB236516C758E700CB9830 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAB233D16C758E600CB9830 /* Foundation.framework */; };
 		BEAB236D16C758E700CB9830 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEAB236B16C758E700CB9830 /* InfoPlist.strings */; };
 		BEAB237016C758E700CB9830 /* CedarTuneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAB236F16C758E700CB9830 /* CedarTuneTests.m */; };
+		BEAB238916C75A8A00CB9830 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAB238816C75A8A00CB9830 /* AudioToolbox.framework */; };
+		BEAB238B16C75A9400CB9830 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAB238A16C75A9300CB9830 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +39,32 @@
 			remoteGlobalIDString = BEAB233616C758E600CB9830;
 			remoteInfo = CedarTune;
 		};
+		BEAB238116C7594700CB9830 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEAB237916C7594600CB9830 /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = "libpd-ios";
+		};
+		BEAB238316C7594700CB9830 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEAB237916C7594600CB9830 /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 119013AB1486450C00086F19;
+			remoteInfo = "libpd-osx";
+		};
+		BEAB238516C75A6A00CB9830 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEAB237916C7594600CB9830 /* libpd.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = "libpd-ios";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE05158A16C8236000746453 /* tuner.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tuner.pd; path = ../../../Users/TheWanderingMind/Projects/PureData/tuner.pd; sourceTree = "<group>"; };
+		BE05158C16C8285A00746453 /* fender_strat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fender_strat.png; path = ../../../../Users/TheWanderingMind/Pictures/fender_strat.png; sourceTree = "<group>"; };
 		BEAB233716C758E600CB9830 /* CedarTune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CedarTune.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAB233B16C758E600CB9830 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEAB233D16C758E600CB9830 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +88,9 @@
 		BEAB236C16C758E700CB9830 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BEAB236E16C758E700CB9830 /* CedarTuneTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CedarTuneTests.h; sourceTree = "<group>"; };
 		BEAB236F16C758E700CB9830 /* CedarTuneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CedarTuneTests.m; sourceTree = "<group>"; };
+		BEAB237916C7594600CB9830 /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpd.xcodeproj; path = "../../../../../../../../Developer/usr/pd-for-ios/libpd/libpd.xcodeproj"; sourceTree = "<group>"; };
+		BEAB238816C75A8A00CB9830 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BEAB238A16C75A9300CB9830 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +98,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE05158916C822E700746453 /* libpd-ios.a in Frameworks */,
+				BEAB238B16C75A9400CB9830 /* AVFoundation.framework in Frameworks */,
+				BEAB238916C75A8A00CB9830 /* AudioToolbox.framework in Frameworks */,
 				BEAB233C16C758E600CB9830 /* UIKit.framework in Frameworks */,
 				BEAB233E16C758E600CB9830 /* Foundation.framework in Frameworks */,
 				BEAB234016C758E600CB9830 /* CoreGraphics.framework in Frameworks */,
@@ -89,6 +123,10 @@
 		BEAB232C16C758E600CB9830 = {
 			isa = PBXGroup;
 			children = (
+				BE05158A16C8236000746453 /* tuner.pd */,
+				BEAB238A16C75A9300CB9830 /* AVFoundation.framework */,
+				BEAB238816C75A8A00CB9830 /* AudioToolbox.framework */,
+				BEAB237916C7594600CB9830 /* libpd.xcodeproj */,
 				BEAB234116C758E600CB9830 /* CedarTune */,
 				BEAB236816C758E700CB9830 /* CedarTuneTests */,
 				BEAB233A16C758E600CB9830 /* Frameworks */,
@@ -123,6 +161,7 @@
 				BEAB234B16C758E600CB9830 /* AppDelegate.m */,
 				BEAB235316C758E600CB9830 /* MainStoryboard_iPhone.storyboard */,
 				BEAB235616C758E600CB9830 /* MainStoryboard_iPad.storyboard */,
+				BE05158C16C8285A00746453 /* fender_strat.png */,
 				BEAB235916C758E600CB9830 /* ViewController.h */,
 				BEAB235A16C758E600CB9830 /* ViewController.m */,
 				BEAB234216C758E600CB9830 /* Supporting Files */,
@@ -163,6 +202,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BEAB237A16C7594600CB9830 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BEAB238216C7594700CB9830 /* libpd-ios.a */,
+				BEAB238416C7594700CB9830 /* libpd-osx.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,6 +225,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BEAB238616C75A6A00CB9830 /* PBXTargetDependency */,
 			);
 			name = CedarTune;
 			productName = CedarTune;
@@ -221,6 +270,12 @@
 			mainGroup = BEAB232C16C758E600CB9830;
 			productRefGroup = BEAB233816C758E600CB9830 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BEAB237A16C7594600CB9830 /* Products */;
+					ProjectRef = BEAB237916C7594600CB9830 /* libpd.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BEAB233616C758E600CB9830 /* CedarTune */,
@@ -228,6 +283,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BEAB238216C7594700CB9830 /* libpd-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-ios.a";
+			remoteRef = BEAB238116C7594700CB9830 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BEAB238416C7594700CB9830 /* libpd-osx.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-osx.a";
+			remoteRef = BEAB238316C7594700CB9830 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BEAB233516C758E600CB9830 /* Resources */ = {
@@ -240,6 +312,8 @@
 				BEAB235216C758E600CB9830 /* Default-568h@2x.png in Resources */,
 				BEAB235516C758E600CB9830 /* MainStoryboard_iPhone.storyboard in Resources */,
 				BEAB235816C758E600CB9830 /* MainStoryboard_iPad.storyboard in Resources */,
+				BE05158B16C8236000746453 /* tuner.pd in Resources */,
+				BE05158D16C8285A00746453 /* fender_strat.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +369,11 @@
 			isa = PBXTargetDependency;
 			target = BEAB233616C758E600CB9830 /* CedarTune */;
 			targetProxy = BEAB236616C758E700CB9830 /* PBXContainerItemProxy */;
+		};
+		BEAB238616C75A6A00CB9830 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libpd-ios";
+			targetProxy = BEAB238516C75A6A00CB9830 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -360,6 +439,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/../usr/pd-for-ios/libpd/";
 			};
 			name = Debug;
 		};
@@ -382,6 +462,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/../usr/pd-for-ios/libpd/";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -392,7 +473,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CedarTune/CedarTune-Prefix.pch";
 				INFOPLIST_FILE = "CedarTune/CedarTune-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Developer/usr/pd-for-ios/libpd $(SRCROOT)/../";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -403,7 +486,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CedarTune/CedarTune-Prefix.pch";
 				INFOPLIST_FILE = "CedarTune/CedarTune-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Developer/usr/pd-for-ios/libpd";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -461,6 +546,7 @@
 				BEAB237516C758E700CB9830 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BEAB237616C758E700CB9830 /* Build configuration list for PBXNativeTarget "CedarTuneTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +555,7 @@
 				BEAB237816C758E700CB9830 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

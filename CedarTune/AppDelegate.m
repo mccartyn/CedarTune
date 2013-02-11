@@ -8,10 +8,27 @@
 
 #import "AppDelegate.h"
 
+#import "ViewController.h"
+
 @implementation AppDelegate
+
+@synthesize window = window;
+@synthesize viewController = _viewController;
+@synthesize audioController = _audioController;
+
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    _audioController = [[PdAudioController alloc] init];
+    if([self.audioController configureAmbientWithSampleRate:44100 numberChannels:2 mixingEnabled:YES] != PdAudioOK){
+        NSLog(@"failed to initialize audio components");
+    }
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
+    
     // Override point for customization after application launch.
     return YES;
 }
