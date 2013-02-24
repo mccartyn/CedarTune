@@ -29,6 +29,8 @@
 		BEAB237016C758E700CB9830 /* CedarTuneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAB236F16C758E700CB9830 /* CedarTuneTests.m */; };
 		BEAB238916C75A8A00CB9830 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAB238816C75A8A00CB9830 /* AudioToolbox.framework */; };
 		BEAB238B16C75A9400CB9830 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAB238A16C75A9300CB9830 /* AVFoundation.framework */; };
+		BEE2688B16D1E44600C72BC7 /* fiddle~.c in Sources */ = {isa = PBXBuildFile; fileRef = BEE2688A16D1E44600C72BC7 /* fiddle~.c */; };
+		BEE2688F16D1F12A00C72BC7 /* PitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE2688E16D1F12A00C72BC7 /* PitchView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BE05158A16C8236000746453 /* tuner.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tuner.pd; path = ../../../Users/TheWanderingMind/Projects/PureData/tuner.pd; sourceTree = "<group>"; };
+		BE05158A16C8236000746453 /* tuner.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tuner.pd; path = /Users/TheWanderingMind/Projects/PureData/tuner.pd; sourceTree = "<absolute>"; };
 		BE05158C16C8285A00746453 /* fender_strat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fender_strat.png; path = ../../../../Users/TheWanderingMind/Pictures/fender_strat.png; sourceTree = "<group>"; };
 		BEAB233716C758E600CB9830 /* CedarTune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CedarTune.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAB233B16C758E600CB9830 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -91,6 +93,9 @@
 		BEAB237916C7594600CB9830 /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpd.xcodeproj; path = "../../../../../../../../Developer/usr/pd-for-ios/libpd/libpd.xcodeproj"; sourceTree = "<group>"; };
 		BEAB238816C75A8A00CB9830 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BEAB238A16C75A9300CB9830 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BEE2688A16D1E44600C72BC7 /* fiddle~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "fiddle~.c"; path = "../../../usr/pd-for-ios/libpd/pure-data/extra/fiddle~/fiddle~.c"; sourceTree = "<group>"; };
+		BEE2688D16D1F12A00C72BC7 /* PitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PitchView.h; path = ../PitchView.h; sourceTree = "<group>"; };
+		BEE2688E16D1F12A00C72BC7 /* PitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PitchView.m; path = ../PitchView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +128,6 @@
 		BEAB232C16C758E600CB9830 = {
 			isa = PBXGroup;
 			children = (
-				BE05158A16C8236000746453 /* tuner.pd */,
 				BEAB238A16C75A9300CB9830 /* AVFoundation.framework */,
 				BEAB238816C75A8A00CB9830 /* AudioToolbox.framework */,
 				BEAB237916C7594600CB9830 /* libpd.xcodeproj */,
@@ -157,7 +161,11 @@
 		BEAB234116C758E600CB9830 /* CedarTune */ = {
 			isa = PBXGroup;
 			children = (
+				BEE2688D16D1F12A00C72BC7 /* PitchView.h */,
+				BEE2688E16D1F12A00C72BC7 /* PitchView.m */,
+				BEE2688A16D1E44600C72BC7 /* fiddle~.c */,
 				BEAB234A16C758E600CB9830 /* AppDelegate.h */,
+				BE05158A16C8236000746453 /* tuner.pd */,
 				BEAB234B16C758E600CB9830 /* AppDelegate.m */,
 				BEAB235316C758E600CB9830 /* MainStoryboard_iPhone.storyboard */,
 				BEAB235616C758E600CB9830 /* MainStoryboard_iPad.storyboard */,
@@ -351,6 +359,8 @@
 				BEAB234816C758E600CB9830 /* main.m in Sources */,
 				BEAB234C16C758E600CB9830 /* AppDelegate.m in Sources */,
 				BEAB235B16C758E600CB9830 /* ViewController.m in Sources */,
+				BEE2688B16D1E44600C72BC7 /* fiddle~.c in Sources */,
+				BEE2688F16D1F12A00C72BC7 /* PitchView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,9 +483,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CedarTune/CedarTune-Prefix.pch";
 				INFOPLIST_FILE = "CedarTune/CedarTune-Info.plist";
-				ONLY_ACTIVE_ARCH = NO;
+				New_Setting = "";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				"OTHER_CFLAGS[arch=*]" = "-DPD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Developer/usr/pd-for-ios/libpd $(SRCROOT)/../";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Developer/usr/pd-for-ios/libpd/** $(SRCROOT)/../**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -486,9 +499,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CedarTune/CedarTune-Prefix.pch";
 				INFOPLIST_FILE = "CedarTune/CedarTune-Info.plist";
+				New_Setting = "";
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_CFLAGS[arch=*]" = "-DPD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Developer/usr/pd-for-ios/libpd";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Developer/usr/pd-for-ios/libpd/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "/Developer/usr/pd-for-ios/libpd/objc/PdDispatcher.h"
+#import "PdDispatcher.h"
+#import "PitchView.h"
 
 
 
 @interface ViewController : UIViewController {
-    PdDispatcher *dispatcher;
-    void *patch;
 }
+
+
 
 -(IBAction)playE:(id)sender;
 -(IBAction)playA:(id)sender;
@@ -22,6 +23,6 @@
 -(IBAction)playG:(id)sender;
 -(IBAction)playB:(id)sender;
 -(IBAction)playE2:(id)sender;
-
-
+-(IBAction)currentPitch:(id)sender;
+   
 @end

@@ -7,27 +7,59 @@
 //
 
 #import "AppDelegate.h"
+#import "PdAudioController.h"
 
-#import "ViewController.h"
+@interface AppDelegate()
+@property (nonatomic, retain) PdAudioController *audioController;
+@property (nonatomic, retain) PdDispatcher *dispatcher;
+@end
 
 @implementation AppDelegate
 
-@synthesize window = window;
-@synthesize viewController = _viewController;
-@synthesize audioController = _audioController;
 
+@synthesize window;
+@synthesize viewController;
+@synthesize audioController;
+@synthesize dispatcher;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    _audioController = [[PdAudioController alloc] init];
-    if([self.audioController configureAmbientWithSampleRate:44100 numberChannels:2 mixingEnabled:YES] != PdAudioOK){
+    self.audioController = [[PdAudioController alloc] init];
+    if([self.audioController configurePlaybackWithSampleRate:44100 numberChannels:2 inputEnabled:YES mixingEnabled:NO] != PdAudioOK){
         NSLog(@"failed to initialize audio components");
     }
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
+
+    
+    //We are using fiddle~ in our tuner.pd patch so we need to include the external
+    //Fiddle~ code since it is not pard of libPD by default. (see Making Musical Apps, page 101)
+    fiddle_tilde_setup();
+    
+    //Now we can open the patch, set up our listeners, and turn on the auido
+    void *patch = [PdBase openFile:@"tuner.pd" path:[[NSBundle mainBundle] resourcePath]];
+    NSLog(@"opened patch");
+    
+    if(!patch){
+        NSLog(@"Failed to open patch");
+        //Gracefully handle failure TBD
+    }
+
+    //You need to create a "listener" for each message.
+    //self.spamListener = [[PdListener alloc] init];
+    //[dispatcher addListener:spamListener forSource:@"spam"];
+
+    //Add one for the fiddle component in our tuner patch.
+    //self.fiddleListener = [[PdListener alloc] init];
+    //[dispatcher addListener:fiddleListener forSource:@"fiddleOut"];
+    
+    NSLog(@"Set up Audio Components");
+    [self.audioController setActive:YES];
+	[self.audioController print];
+    
+    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    //self.window.rootViewController = self.viewController;
+    //[self.window makeKeyAndVisible];
     
     // Override point for customization after application launch.
     return YES;
@@ -59,5 +91,6 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
 @end
+
+

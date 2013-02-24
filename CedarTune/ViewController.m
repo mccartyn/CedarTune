@@ -9,11 +9,17 @@
 #import "ViewController.h"
 
 
+
 @interface ViewController ()
+@property (strong, atomic) IBOutlet PitchView *pitchView;
+@property (nonatomic, retain) PdDispatcher *dispatcher;
 
 @end
 
 @implementation ViewController
+
+@synthesize pitchView;
+@synthesize dispatcher;
 
 #pragma mark - View lifecycle
 
@@ -21,21 +27,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    pitchView.centerPitch  = @64;
+    pitchView.currentPitch = @0;
+    
+    //Add one for the fiddle component in our tuner patch.
     dispatcher = [[PdDispatcher alloc] init];
     [PdBase setDelegate:dispatcher];
-    patch = [PdBase openFile:@"tuner.pd" path:[[NSBundle mainBundle] resourcePath]];
+    [dispatcher addListener:self forSource:@"fiddleOut"];
+
     
-    UIImage *image = [UIImage imageNamed:@"fender_strat.png"];
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.frame = self.view.frame;
-    [self.view addSubview:imageView];
-    [self.view sendSubviewToBack:imageView];
-    
-    if(!patch){
-        NSLog(@"Failed to open patch");
-        //Gracefully handle failure TBD
-    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,8 +46,9 @@
 
 #pragma mark button callbacks
 
+
 -(void)playNote:(int)n {
-    [PdBase sendFloat:n toReceiver:@"midiNote"];
+    [PdBase sendFloat:n toReceiver:@"midinote"];
     [PdBase sendBangToReceiver:@"trigger"];
 }
 
@@ -80,5 +81,22 @@
     NSLog(@"Playing E2");
     [self playNote:64];
 }
+
+#pragma pitchView 
+
+
+-(void)receiveList:(NSArray *)list fromSource:(NSString *)source{
+    pitchView.currentPitch = [list objectAtIndex:2];
+    /*Check the amplitude to be between some threshold and set the center pitch.
+     essentially we are trying to capture the center pitch as the most prominent first heard note and keep it like that until a new louder note is sounded*/
+    NSLog(@"Current amplitude = %@",[list objectAtIndex:3]);
+    if([list objectAtIndex:3] > [NSNumber numberWithFloat:80.0])
+    {
+        [self.pitchView calculateCenterPitch];
+    }
+    [self.pitchView setNeedsDisplay];
+}
+
+
 
 @end

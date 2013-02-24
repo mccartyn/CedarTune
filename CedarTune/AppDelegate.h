@@ -7,19 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#import "/Developer/usr/pd-for-ios/libpd/objc/PdAudioController.h"
+#import "PdBase.h"
 
 @class ViewController;
+@class PdAudioController;
+@class PdDispatcher;
 
 
+@interface AppDelegate : UIResponder <UIApplicationDelegate, PdReceiverDelegate> {
+    
+    UIWindow *window;
+    ViewController *viewController;
+	PdAudioController *audioController;
+    PdDispatcher *dispatcher;
+}
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (strong, nonatomic) ViewController *viewController;
-@property (strong, nonatomic, readonly) PdAudioController *audioController;
-
 
 @end
+
+
