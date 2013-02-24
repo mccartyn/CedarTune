@@ -58,7 +58,7 @@
     
     float dx = (self.currentPitch.floatValue - self.centerPitch.floatValue) / 2.0000;
     NSLog(@"dx = %f",dx);
-    if(-1 < dx && dx < 1) //-1 and 1 bounds are because MIDI notes increase/decrease by 1 
+    if(-1 < dx && dx < 1) //-1 and 1 bounds are because MIDI notes increase/decrease by 1 s
     {
         CGContextSetLineWidth(context, 2.0);
         CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
